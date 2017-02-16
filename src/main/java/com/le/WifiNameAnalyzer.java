@@ -6,7 +6,6 @@ import java.util.Map;
 
 import com.google.common.collect.Sets;
 import org.apache.hadoop.hive.ql.exec.UDF;
-import org.apache.hadoop.io.Text;
 
 import static com.sun.org.apache.xalan.internal.xsltc.compiler.util.Type.Text;
 
@@ -18,7 +17,7 @@ public class WifiNameAnalyzer extends UDF {
 	public static final String UNION = "#";
 	public static Map<String, List<Category>> map = Util.getWIFIName();
 
-	public String evaluate(Text wifiName) {
+	public String evaluate(String wifiName) {
 		String wifi = wifiName.toString().toLowerCase();
 		// for (Category category : list) {
 		// for (String supportWord : category.getSupportWord()) {
@@ -49,6 +48,6 @@ public class WifiNameAnalyzer extends UDF {
 
 	public static void main(String[] args) {
 		WifiNameAnalyzer analyzer = new WifiNameAnalyzer();
-		System.out.println(analyzer.evaluate(new Text("饭店")));
+		System.out.println(analyzer.evaluate("饭店"));
 	}
 }
