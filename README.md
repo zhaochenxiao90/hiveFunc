@@ -2,7 +2,7 @@
 
 
 
-add jar /home/hive/wifi_name-1-jar-with-dependencies.jar;
+add jar /home/hive/hiveFunc-1-jar-with-dependencies.jar;
 
 create temporary function SuggestData as 'suggest.data.handle.SuggestDataHandle';
 
